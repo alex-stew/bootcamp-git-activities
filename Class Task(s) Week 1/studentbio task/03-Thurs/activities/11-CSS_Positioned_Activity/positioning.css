@@ -1,0 +1,28 @@
+  .box-top {
+    position: fixed;
+    top: 2%;
+    left: 6%;
+    width:300px ;
+    height: 150px;
+    background: #3b9ac0;
+    border: 2px solid black;
+  }
+  
+  .box-nested {
+    position: relative;
+    right: 15%;
+    width: 400px;
+    height: 150px;
+    background: #be3e3e;
+    border: 2px solid black;
+  }
+
+  .box-1 {
+    position: absolute;
+    background: chartreuse;
+    width: 200px;
+    height: 75px;
+    top: 6%;
+    left: 2%;
+  }
+  
