@@ -66,6 +66,31 @@ body {
 
   /* The wrapper's width will be 600px */
   .wrapper {
-    width: 600px;
+    width: 500px;
+    padding: 25px;
+    margin-left: 10%;
   }
+
+  #main-content,
+  #sidebar {
+  /* Box-model */
+  width: 500px;
+  padding: 25px;
+  margin: 10%;
+} 
+#main-content {
+  /* Positioning */
+  float: left;
+
+  /* Visual */
+  background: rgb(204, 216, 96);
+}
+
+#sidebar {
+  /* Positioning */
+  float: left;
+
+  /* Visual */
+  background: rgb(219, 32, 32);
+}
 }
