@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Random Numbers</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var RPS = ["r","s","p"];
+      // Loop 10 times
+    var coutOfplayerWin =0;
+    var countOfPcWin = 0;
+
+      for (var i = 0; i < 10; i++) {
+        // Generate a random decimal number between 0 and 1
+        var index = Math.floor(Math.random() * 3);
+        var userInput = prompt("enter your choice: ").toLowerCase();
+        var pc =RPS[index];
+
+
+        console.log("user input:" + userInput + "\n" + "pc: " +pc);
+
+        if((userInput === "r" && pc === "r" )||(userInput === "s" && pc === "s" )||(userInput === "p" && pc === "p") ){
+          console.log("draw");
+        }
+        else{
+          //player win
+          if((userInput ==="p" && pc === "r" ) || (userInput === "s" && pc === "p") || (userInput === "r" && pc === "s")){
+            console.log("player win");
+            coutOfplayerWin++;
+          }else{
+            console.log("pc win");
+            countOfPcWin++;
+          }
+        }
+
+      }
+      console.log("player: "+ coutOfplayerWin + "\n" + "pc: " + countOfPcWin);
+      
+      if(coutOfplayerWin > countOfPcWin){
+        alert("Player Wins");
+      }
+      else if(coutOfplayerWin === countOfPcWin){
+        alert("Draw")
+      }
+      else {
+        alert("PC wins")
+      }
+
+    </script>
+  </body>
+</html>
