@@ -45,7 +45,11 @@
 
         // =================================================================
 
-        // CODE GOES HERE
+        $.ajax({url:queryURL, method:"GET"})
+          .done(function(response){
+            console.log(response);
+            $("#movie-view").append("<div>" + JSON.stringify(response) + "</div>");
+          })
 
         // =================================================================
       });

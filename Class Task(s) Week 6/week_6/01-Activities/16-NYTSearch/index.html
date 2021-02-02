@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New York Times Article Search</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+</head>
+
+<body>
+    <div id="box">
+        <img id="icon"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAflBMVEX///8AAAAbGxupqamenp4TExP4+Ph+fn7g4OBdXV0hISG1tbX09PTc3NzU1NSGhobHx8dFRUU6OjozMzMsLCzAwMDn5+dKSkp0dHQ7OztmZmaNjY1RUVHu7u7IyMirq6twcHCWlpYeHh5PT08VFRW6urqSkpJYWFiBgYEuLi7p9xrvAAALgklEQVR4nO2d14KqMBCGsSEIiFhQcRHLuq7v/4JHKakDShLX6Ml/J0LMZ9rMpGBZudLdofPGGrhjq1nB6NV5lJbXCGi7r86fvKZOE+Fi9ur8KdCpibDXfXX2FGhjfzrh0BC+vR4kHLyd2hL2302baUvChpv0VOx+OqFjCAsZQo1lCEsZQo2FCX+bboMJnZNX6znHJ2/CXBp7jIiHA68+KSR/4i1S6At7vKAS3pKZRIRn+tdP8T1Cv/81OkQb6j70k9l5fpgOA/JSGI0YLcMqv/3jaBSFYFJY42R6uLi8lxfvd8sLlfB6h71dTDigf33ukl4/QGj3iwsr6F/NCmvQJfK86gDaFU1jX3xKwAKqFET5Td0Fc32/BhKOfJ6Q05xABAiD6sqez4xffbdBlzzYO8lr8qSKIDR64buqKKir9hec++EDhJ0z/ksBwh66jw/xnKqvcKkM4d9w81KoPn019HYBKiqy7qdRTeajRwhHOOs8oR2i+2ZcH4GzjHIDVtIyI+j2TgNhhqJ9RA/mJ3WZX1fVtImw22siJAqFaz+b6pslgq8h3N2+66OPDf0pSrNDxMz6AyjR/JerW5QQdkJhwrw8PFQ8G6tO9g49gy8Gy9rMo95BDSHbFB8mLMJfwbH6vK4lHCOYJb6Y1ebdfaQvbUN4oaOtDxJOszIfUPkw8tCkAu6747pWONjgdqOIsONSfUQT4dHyK6FncK9FNER/TLZK3FbxnxnM0cWd45MiHiTs0rT6GiDM7hHi8ece4RdQQCfUEJHtGOTjHDKWU/T8N87+GP16H0iUJ0T/KCLM0G13y7BzyIhU2xLGaKyrGplTGgFJyTNG416CawsiHDT0wY2ELWopCdOe0DpX387LBrSv8lD2YQv0O8Q/iQj5EfkZhOSo2JoQNcRuYbjZqIWFRbawBUXA/DUhMfPRmhAXUUjnvXPMraIU9bbkHNmfE2LDuTWhhWyTJP9IJJ67Eg6a3SNdGUQ4+ivCQfXr7QlRR7J0yCxctfFJFsq2wFe3YKJtCO+PFrkuwoToidzcnxBprgPsizIsmLBhflfBaHH4xtkZ3iecb8JS/TE0tP1cP1G2ytV09VFfuyRdJ4cwS1fXBH9625hzohXUUneFndtv7y4hKWKBBM6qbdnUnPqvb6XkByx/0+HknphYiArCMZH79bgNYecL/eVH4hHvm7xnFBMljLN00wJaAeMuKAtSBWEcT3H6SdyGEI/f++rK4cTeu7B+EC0d50jBVC99ElEFoWNtifT3dhvCc/U9Cvt0eikTeklwT/tFNsOrttMOoC4ZOlJDSFj+ncGiDSEKp6RoRPztz5mbcCOl7Ps8Y7CTTxS1IkKLcMK+nRaEKMs44nLkgkvYufphCQlzjhKup6oIU6K6RDZqN3cJccdX769jzYFw4wRczIQLWxWhtSWq1s+jhHPIUWjQEoqKp+Hym78V0SgjtMmwF0oUIOyevwqdk1+yX3fAToNWAgDeHu1tVsktSeJfRtadMkK45wYIIycoFVPjFtzz06oPxaXxLcUJ7g5W6gkpG6qBELZLLaAhDtk+lZuy4BRfqnvRMKSQ0Frwa1DbEC7Yh8dsqV6apjgL4fbxDEKLNxPbEI6ZUWLmbJnUjncB8c88hxCHW0QIfcYfuzqGzHDOj4Z/TuijZiBASBpGNy24Ieb+LPGza+l1+GVGplaE3oh9lBkj7wM+n5Ath1aEePripjzIRk2rRrVP/iUh05haEdpkpRzk5k5IJgZMNr+AsIzGNxAeErdUEjK+ENkXH/MnqWoKxWK2Q5dUgir68wjp1nTHLj1Mah8tTOeUNKuB0bB+7TKqKuoJrf3jhKRvcVWMR8RRYZMTQTZywqLSCUiR+oeeQ0jMBt4npC1NbFZWXgRRTTOLVVqz/OEmFHUUJ/ytJcQzSfcJl9STuGOpDGcHN2um0dJf1qcrTojqD79kCAd0MX0NId2zLiojZlA5P/hnZrxv6HA2FBIOHAsT4ugT0IljenRpD+eEntq0q65mhDKDzPnQt1hB8dJCRNBRnDAtAysRYEv5ZYmNcF8ZQ2uzbrFQ8K/B4NUA24WmJiasf1VoQDZZcUIryOvICPTZyjUE5DRK0OE14rJdlAq5eqVca8/3Mzd5UKiN3mooQXitQTu3X+eybYfJhqlXvYTWLuMrnhX8cobAZJXs65Ytpn0m0VWP6RakCN9ChrCUIdRYhrCUIdRYhrAUTJg6gSOpwAFGfSsNhBWzJogEob0drmfSWoe8Xbsdzuai+uozzpw4oe2xwVFBrdm9NSfYnn5UCY0oTugoO2aBcaHpoKKA6JMFxAk9yXwQot2TRyaDG7VU41vYtd5ne9Hr4Gtm5h/XiKr2SlfuiUox4YzyOjUkhJcetNCO8hA1JMQrOcR0oZu1hoRWvJcZh85MWEUBYZQthJQhDnbzmz0WS/GmCRu9VbJyzxJSuq4jVKpnRPUfVKwVYdMq6HcmfGwV9DsTPrmWTj+e8PPL0BCqkabtkDtg4lEtuMFZy9GiZvH2Y2Jn+3QcLSQt7ymNqGE73IJzqS00pMJ3GrZD6ShGpCiK8bQylPbx56p9fNWEn1+G7Frh1gqV7+xSPR4yKzjbakkvA9CwDC3rdKQPRWqh+Wz3hP2HT7DahMMYW1GbxtilIjL+oSIZwlKGUESmHSqSISz1t7XUX/SElbELH3QsQ+dX5mUaUUavN9GQ0Ee7AMR0oJPTkPAk+zqUhLJNNWyHn+/jfz4huP6+jejjQTQkbNgJ85j22kcx4CNZHtaKdoI1LMNrpjbiix5dT9V+i6dabXYqLG65qp6EKqVjO1QrU4alDKGITC1VJENY6v8m7K6XkYCW0aCO0O9HU1ElW2ZLiY4raCUnEJlN3xoS4teICYreAa8hoQecL9dKdMegIaG0j39R5OPvZTOCpWcUw2KPGhMXc9CcdBRDUS1Fp0bIi147gY6cEBZ9/ILMqRGubJeQ6zBkp96DRKYUL3tFMe9bKfZCBfL4TaQyCW/YczrMPuBShlBjGcJS/Crot5HwKui3kamlpf5rQj8YCyqoPxZYOM2xuvdbVNq7QjGMPI7hZjDjYiecZnRmXxsqSyhnfg9+IERPbjN3IrRGuG60kF51DhxnN65/5d9janFqxP3RQnbReWfHE+qyVr+Q9PEmwAsPtfHxc8lu4MGHwysknKosw5BNva2AcLf0qRErNadGFPKhl/W00Bl4x7Et+bfNFZ0aUT0v1dck4JSH3MEwc1WnRqDsBJnoQkmvdkrH9wST7Pe44cfYpaUMocYyhKUMocYyhKX+Z0LfuX8eZZ2cmjCGHYunGbB2oCxhILN1YMRGHAqlmcwS2qTNqRH3CW1Jf3wFlKItudN5rejUiEJ7ucxQr2KspMupEYWkPWDgbXjSHvBaqyjG9AmEis6+LCQdiQLKUK9IlPT/zZ6wa6k4NUJlOyTfsCqiX2hEzORCI2elfamVbo5z4RMezn3oqGvL9hLhNEcRe7a0vNUWbCeC2tZGMWLhNCdj9k8zdmkpQ6ixDGEpQ6ixDGEpQ6ixDGEpQ6ixDGEpQ6ixDGGpT10jjAlxGNp/M9njc0vCN9b/Tii7n0wH/e9l+MqcqVLYOB5+Qi3FONUVgtCTPUNNBwU8IV4FLb3mUwMRL9iuLhFlGODZbPEphZfqq0eE+wFCG88x9UVfrvFSnag5EoDQwrvv6RML3lMQYYZ2NUeCLyHTSRChjbua8HU5UyWI0MKb5Ae92iffRYiQ3Lof42539NQTc/5CYBkShdj5zsDZ6fcRTBh3MWLnd1v38FsIJqRXlsx+Tm/cp9YQ+vSJNHN3GP7031M1hFbw1WE1eE/VEcqvVtJNHKG1/TBEntAay57DpZcAQiuWPDBdL3UzntCyM9mjmjXSjD2up5DT+5jW6NbYZna8UHYK1ks1D2DAHNLehudL934iGqtb7Rf+B211cBLHgZPvAAAAAElFTkSuQmCC">
+        <h1 id="title">New York Times Article Search</h1>
+    </div>
+    <div id="seach_title">
+        <form>
+            <h2>Search Parameters</h2>
+            <div class="form-group">
+                <label for="search_term">Search Term:</label>
+                <input type="text" class="term" id="searchterm">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">Number of Records to Retrieve:</label>
+                <select id="inputState" class="form-control">
+                    <option selected>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="start_year">Start Year (Optional):</label>
+                <input type="text" class="year" id="searchterm">
+            </div>
+            <div class="form-group">
+                <label for="end_year">End Year (Optional):</label>
+                <input type="text" class="end" id="searchterm">
+            </div>
+            <button id="submitButton" type="submit" class="btn btn-link">Search</button>
+            <button type="button" class="btn btn-link">Clear Results</button>
+        </form>
+    </div>
+    <div id="top_article">
+        <h2>Top Articles</h2>
+    </div>
+    <div>
+        <hr>
+        <p>Made with lots and lots of love </p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src=".//index.js"></script> -->
+
+    <script>
+        var apiKey = "ViDGWGKn6Nvaqa9zQM30j3Ws12espMFg";
+        var query = $("#searchterm").text();
+        var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + query + "&api-key=" + apiKey;
+
+        $("#submitButton").on("click", function () {
+            event.preventDefault()
+            console.log(queryURL);
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            })
+                .then(function (response) {
+                    var results = response.response.docs[0].abstract;
+                    var articleDiv = $("<div>");
+                    var p = $("<p>").text(results);
+                    var linkButton = $("<a>").text("Follow me").attr("href", response.response.docs[i].web_url);
+                    console.log(response.response.docs[0].abstract);
+                    articleDiv.append(p);
+                    articleDiv.append(linkButton);
+                    $("body").append(articleDiv);
+                })
+        });
+
+    </script>
+</body>
+
+</html>

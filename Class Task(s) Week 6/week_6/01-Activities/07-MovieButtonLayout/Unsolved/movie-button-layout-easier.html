@@ -41,9 +41,13 @@
 
         // Delete the content inside the buttons-view div prior to adding new movies
         // (this is necessary otherwise you will have repeat buttons)
-
+        $("#buttons-view").empty();
         // Loop through the array of movies, then generate buttons for each movie in the array
-
+        for (var i = 0; i < movies.length; i++){
+          var button = $("<button>");
+          button.text(movies[i]);
+          $("#buttons-view").append(button);
+        }
       }
 
       // This function handles events where the add movie button is clicked
@@ -52,6 +56,9 @@
         // Using a submit button instead of a regular button allows the user to hit
         // "Enter" instead of clicking the button if desired
         event.preventDefault();
+
+        var userInput = $("#movie-input").val().trim();
+        movies.push(userInput);
 
         // Write code to grab the text the user types into the input field
         // Write code to add the new movie into the movies array

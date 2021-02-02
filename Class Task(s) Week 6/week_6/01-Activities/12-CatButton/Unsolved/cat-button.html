@@ -12,32 +12,32 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
-    //
+    //targets the existing cat-button element and adds an on click event listener
     $("#cat-button").on("click", function() {
 
-      //
-      var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=cats&rating=pg";
+      //this variable holds the API location in a URL
+      var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=hjP9kZ0Dns0mEhzondncgDX98I4C7oGv=pg";
 
-      //
+      //using asynchronus JS we can retrieve a random GIF using the GET method
       $.ajax({
         url: queryURL,
         method: "GET"
       })
 
-      //
+      // all of the random GIF's information
         .then(function(response) {
 
-        //
+        // this variable locates the information and targets the property we wish to access
           var imageUrl = response.data.image_original_url;
 
-          //
+          // using JQuery we are creating a new img element named catImage
           var catImage = $("<img>");
 
-          //
+          // then we apply the retrieved src attributes to catImage 
           catImage.attr("src", imageUrl);
           catImage.attr("alt", "cat image");
 
-          //
+          //each time the button is pushed a new image is added at the beginning of the display divs
           $("#images").prepend(catImage);
         });
     });

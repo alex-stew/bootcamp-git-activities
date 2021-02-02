@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aim for the Bushes</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        $.ajax({
+            url: "https://www.omdbapi.com/?t=the+other+guys&y=&plot=short&apikey=trilogy",
+            method: "GET"
+        }).then(function (res) {
+            console.log(res);
+            $("body").append("<h1>" + res.Title + "</h1>"),
+            console.log(res.Title);
+            $("body").append("<img src=" + res.Poster + ">"),
+            $("body").append("<p>" + res.Plot + "</p>"),
+            console.log(res.Plot);
+            $("body").append("<h2>" + res.Actors + "</h2>");
+            console.log(res.Actors);
+        });
+    </script>
+</body>
+</html>

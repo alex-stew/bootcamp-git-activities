@@ -19,7 +19,7 @@
   <div class="container">
     <h1>Movie Search</h1>
 
-     <!-- Rendered Buttons will get Dumped Here  -->
+    <!-- Rendered Buttons will get Dumped Here  -->
     <div id="buttons-view"></div>
 
     <form id="movie-form">
@@ -35,11 +35,27 @@
       // Initial array of movies
       var movies = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
 
+      // This is our API key. Add your own API key between the ""
+      var APIKey = "trilogy";
+
+      // Here we are building the URL we need to query the database
+      var queryURL = "https://www.omdbapi.com/?t=" + movie + "y=&plot=short&apikey=" + APIKey;
+
       // Generic function for capturing the movie name from the data-attribute
       function alertMovieName() {
 
+        var movieName = $(this).attr("data-name");
+        event.preventDefault();
+        alert(movieName);
         // YOUR CODE GOES HERE!!!
 
+        $.ajax({
+          url: queryURL,
+          method: "GET"
+        }).then(function(response) {
+          $("#movies-view").text(JSON.stringify(response));
+          console.log(response);
+        })
       }
 
       // Function for displaying movie data
@@ -67,7 +83,7 @@
       }
 
       // This function handles events where one button is clicked
-      $("#add-movie").on("click", function(event) {
+      $("#add-movie").on("click", function (event) {
         event.preventDefault();
 
         // This line grabs the input from the textbox

@@ -24,8 +24,16 @@
             * with a quote said by them -->
 
     <!-- **************************************** -->
-
-    <!-- YOUR BUTTONS GO HERE!!!!!! Delete this comment and put your buttons here.  -->
+    
+    <button data-person="samuel l jackson">
+      We're All Gonna Be Like Three Little Fonzies Here.
+    </button>
+    <button data-person="robin williams">
+      You’re only given one little spark of madness. You mustn’t lose it.
+    </button>
+    <button data-person="beyonce">
+      My message behind this album was finding the beauty in imperfection.
+    </button>    
 
     <!-- **************************************** -->
 
@@ -44,7 +52,7 @@
     $("button").on("click", function() {
       var person = $(this).attr("data-person");
       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        person + "&api_key=dc6zaTOxFJmzC&limit=10";
+        person + "&api_key=hjP9kZ0Dns0mEhzondncgDX98I4C7oGv&limit=10";
 
       $.ajax({
         url: queryURL,
